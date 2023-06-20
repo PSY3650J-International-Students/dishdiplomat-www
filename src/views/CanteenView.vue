@@ -11,14 +11,17 @@ import {useRoute} from 'vue-router'
 import { Canteen } from '@/types/Canteen'
 import { canteenList } from '@/store/CanteenList'
 import { ref } from 'vue'
+import { watch } from 'vue'
 const route = useRoute()
 
-const canteen_path : string = route.params.canteen_path as string
 const canteen = ref<Canteen>(canteenList[0])
-for (var canteen_inst of canteenList) {
-  if (canteen_inst.path == canteen_path) {
-    canteen.value = canteen_inst
+
+watch(() => route.params.canteen_path, (canteen_path) => {
+  for (var canteen_inst of canteenList) {
+    if (canteen_inst.path == canteen_path) {
+      canteen.value = canteen_inst
+    }
   }
-}
-console.log(canteen_path)
+})
+
 </script>

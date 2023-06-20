@@ -29,4 +29,12 @@ export var canteenList: Canteen[] = [
     name: 'Canteen No. 7',
     path: 'canteen7',
   },
+  {
+    name: 'Yulan Garden',
+    path: 'yulan',
+  },
+  {
+    name: 'HaLe Kitchen',
+    path: 'hale',
+  },
 ]

@@ -15,6 +15,11 @@ import { watch } from 'vue'
 const route = useRoute()
 
 const canteen = ref<Canteen>(canteenList[0])
+for (var canteen_inst of canteenList) {
+  if (canteen_inst.path == route.params.canteen_path) {
+    canteen.value = canteen_inst
+  }
+}
 
 watch(() => route.params.canteen_path, (canteen_path) => {
   for (var canteen_inst of canteenList) {

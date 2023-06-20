@@ -20,7 +20,7 @@
   import { canteenList } from '@/store/CanteenList'
   import { Canteen } from '@/types/Canteen'
   const drawer = ref<boolean>(false)
-  const drawer_location=ref<"bottom" | "top" | "start" | "end" | "left" | "right" | undefined>("bottom")
+  const drawer_location=ref<"bottom" | "top" | "start" | "end" | "left" | "right" | undefined>("left")
   const canteenListStore = ref(canteenList)
   const get_canteen_path = (canteen: Canteen)=>{
     return '/canteen/'+canteen.path

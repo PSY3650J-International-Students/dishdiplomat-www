@@ -2,6 +2,7 @@
   <v-container class="fill-height">
     <v-responsive class="text-center fill-height">
       <h1 class="text-h2 font-weight-bold">{{canteen.name}}</h1>
+  <WindowCard v-for="window in canteen.windows" :window="window" :key="window.id"></WindowCard>
     </v-responsive>
   </v-container>
 </template>
@@ -12,6 +13,7 @@ import { Canteen } from '@/types/Canteen'
 import { canteenList } from '@/store/CanteenList'
 import { ref } from 'vue'
 import { watch } from 'vue'
+import { WindowCard } from '@/components/WindowCard.vue'
 const route = useRoute()
 
 const canteen = ref<Canteen>(canteenList[0])

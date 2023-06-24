@@ -1,8 +1,12 @@
 <template>
   <v-container class="fill-height">
-    <v-responsive class="text-center fill-height">
-      <h1 class="text-h2 font-weight-bold">{{canteen.name}}</h1>
-      <WindowCard v-for="window in canteen.window_list" :window="window"></WindowCard>
+    <v-responsive class="fill-height">
+      <h1 class="text-h2 font-weight-bold text-center">{{canteen.name}}</h1>
+      <v-row class="d-flex align-center justify-center">
+        <v-col cols="auto" v-for="window in canteen.window_list" >
+          <WindowCard :window="window" cols="auto"></WindowCard>
+        </v-col>
+      </v-row>
     </v-responsive>
   </v-container>
 </template>

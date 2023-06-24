@@ -10,5 +10,5 @@ const DumplingWindow: CanteenWindow = {
 export const YulanGarden: Canteen = {
   name: 'Yulan Garden',
   path: 'yulan-garden',
-  window_list: [DumplingWindow]
+  window_list: [DumplingWindow, DumplingWindow, DumplingWindow]
 }

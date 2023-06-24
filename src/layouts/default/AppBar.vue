@@ -8,8 +8,8 @@
   </v-navigation-drawer>
   <v-app-bar flat>
     <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-    <v-app-bar-title>
-      <v-icon icon="mdi-circle-slice-4" />
+    <v-img max-width="40px" src="https://statics.sjtucanteen.com/logo/dishdiplomat-website-favicon-color.svg" class="mx-2"/>
+    <v-app-bar-title >
       DishDiplomat
     </v-app-bar-title>
   </v-app-bar>

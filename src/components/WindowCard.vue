@@ -1,7 +1,7 @@
 <template>
   <v-card
     min-width=300px
-    max-width=400px
+    max-width=340px
     class="mx-auto"
     :to=get_window_path(props.canteen,props.window)
     >

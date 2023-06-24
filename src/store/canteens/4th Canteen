@@ -1,0 +1,14 @@
+import { Canteen } from '@/types/Canteen';
+import { CanteenWindow } from '@/types/CanteenWindow';
+
+const DumplingWindow: CanteenWindow = {
+  name: 'Dumplings',
+  path: 'dumplings',
+  cover_picture: 'https://i.imgur.com/2Z3QJ5v.jpg',
+}
+
+export const 4thCanteen: Canteen = {
+  name: '4thCanteen',
+  path: '4thCanteen',
+  window_list: [DumplingWindow, DumplingWindow, DumplingWindow]
+}

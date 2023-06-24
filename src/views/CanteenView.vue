@@ -4,7 +4,7 @@
       <h1 class="text-h2 font-weight-bold text-center">{{canteen.name}}</h1>
       <v-row class="d-flex align-center justify-center">
         <v-col cols="auto" v-for="window in canteen.window_list" >
-          <WindowCard :window="window" cols="auto"></WindowCard>
+          <WindowCard :window="window" :canteen=canteen cols="auto"></WindowCard>
         </v-col>
       </v-row>
     </v-responsive>

@@ -1,10 +1,14 @@
 <template>
-  <v-card min-width=300px max-width=400px class="mx-auto">
-    <v-card-title>
-      <v-img
+  <v-card
+    min-width=300px
+    max-width=400px
+    class="mx-auto"
+    >
+    <v-img
       src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-      height="200px"
+      width="100%"
     ></v-img>
+    <v-card-title>
       {{ props.window.name }}
     </v-card-title>
   </v-card>

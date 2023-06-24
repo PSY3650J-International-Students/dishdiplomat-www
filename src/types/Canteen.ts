@@ -1,6 +1,6 @@
-import { Window } from '@/types/Window';
+import { CanteenWindow } from '@/types/CanteenWindow'
 export interface Canteen {
   name:string,
   path:string,
-  window_list:Window[]
+  window_list:CanteenWindow[]
 }

@@ -1,14 +1,22 @@
 <template>
   <v-card>
     <v-card-title>
-      {{ props.window.title }}
+      {{ props.window.name }}
     </v-card-title>
   </v-card>
 </template>
 
 
 <script lang="ts" setup>
-  import { Window } from '@/types/Window'
   import { ref } from 'vue'
-  const props = defineProps({window: Window})
+  import { CanteenWindow } from '@/types/CanteenWindow'
+  import { PropType } from 'vue'
+  const props = defineProps(
+    {
+      window: {
+        type: Object as PropType<CanteenWindow>,
+        required: true
+      }
+    }
+  )
 </script>

@@ -6,7 +6,7 @@
     :to=get_window_path(props.canteen,props.window)
     >
     <v-img
-      src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+      :src="props.window.cover_picture"
       width="100%"
     ></v-img>
     <v-card-title>

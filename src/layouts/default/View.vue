@@ -7,7 +7,6 @@
     <v-spacer />
     <v-btn
       color="primary"
-      text
       href="https://github.com/PSY3650J-International-Students/dishdiplomat-www"
       target="_blank"
       >

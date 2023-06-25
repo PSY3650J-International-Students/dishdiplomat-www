@@ -2,7 +2,6 @@
   <v-main>
     <router-view />
     <v-footer
-      app
     >
     <v-spacer />
     <v-btn

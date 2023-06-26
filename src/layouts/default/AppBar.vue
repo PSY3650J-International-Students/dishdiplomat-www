@@ -17,7 +17,6 @@
       rounded
       >
       <v-icon left>mdi-github</v-icon>
-      Contribute
     </v-btn>
   </v-app-bar>
 </template>

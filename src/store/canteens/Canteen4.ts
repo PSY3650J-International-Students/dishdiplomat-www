@@ -163,8 +163,8 @@ const Hotchpotch: CanteenWindow = {
 }
 
 export const Canteen4: Canteen = {
-  name: 'Canteen2',
-  path: 'canteen2',
+  name: 'Canteen4',
+  path: 'canteen4',
   window_list: [Timo_Bakery, Spicy_Boiled_dishes, Light_meal, Korean_fried_chicken
     ,Braised_dishes,Bibimap_Grain_noodle,Omurice,Maocai_Spicy_pot,Steamed_dishes
     ,Lanzhou_noodles,Sliced_noodles,Rice_noodles,Hot_and_Dry_noodles_dumplings

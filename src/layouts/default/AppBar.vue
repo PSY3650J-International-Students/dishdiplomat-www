@@ -10,6 +10,15 @@
     <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     <v-img max-width="200px" src="https://statics.sjtucanteen.com/logo/cropped_logo.png" class="mx-2"/>
     <v-spacer></v-spacer>
+    <v-btn
+      color="primary"
+      href="https://github.com/PSY3650J-International-Students/dishdiplomat-www"
+      target="_blank"
+      rounded
+      >
+      <v-icon left>mdi-github</v-icon>
+      GitHub
+    </v-btn>
   </v-app-bar>
 </template>
 

@@ -15,9 +15,7 @@
       href="https://github.com/PSY3650J-International-Students/dishdiplomat-www"
       target="_blank"
       icon="mdi-github"
-      rounded
-      >
-    </v-btn>
+      />
   </v-app-bar>
 </template>
 

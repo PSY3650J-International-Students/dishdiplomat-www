@@ -78,10 +78,12 @@ import { PropType, ref } from 'vue';
   const dialogOpen = ref(false)
   let dialogTimer: ReturnType<typeof setTimeout> | null = null
 
-    const openDialog = () => {
-      event.stopPropagation()
-    dialogOpen.value = true
+    const openDialog = (event?: Event) => {
+  if (event) {
+    event.stopPropagation();
   }
+  dialogOpen.value = true;
+};
 
   const closeDialog = () => {
       dialogOpen.value = false

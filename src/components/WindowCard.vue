@@ -26,10 +26,9 @@
               <v-list>
                 <v-list-item v-for="dish in window.dishes" :key="dish.name">
                     {{ dish.name }}
-                      <v-img
-                      :src="dish.cover_picture"
-                          width="100%"
-                          ></v-img>
+                    <v-list-item-icon>
+                        <v-img :src="dish.cover_picture" />
+                    </v-list-item-icon>
                     Chinese name:
                     {{ dish.chinese_name }}
                     <br>
@@ -37,7 +36,6 @@
                     <br>
                     <template v-if="dish.flavor && dish.flavor.length > 0">
                         Flavor:
-                        <br>
                         <v-list>
                           <v-list-item v-for="flavor in dish.flavor">
                             {{ flavor }}

@@ -1,11 +1,15 @@
 import { Canteen } from '@/types/Canteen';
 import { CanteenWindow } from '@/types/CanteenWindow';
+import {dishes_Timo} from './canteen4/Timo_bakery';
+
+
 
 const Timo_Bakery: CanteenWindow = {
   name: 'Timo Bakery',
   path: 'Timo_Bakery',
   chinese_name: "甜魔烘焙",
   cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-12.jpg',
+  dishes: Object.values(dishes_Timo),
 }
 
 const Spicy_Boiled_dishes: CanteenWindow = {
@@ -13,6 +17,7 @@ const Spicy_Boiled_dishes: CanteenWindow = {
   path: 'Spicy_Boiled_dishes',
   chinese_name: "川湘水煮",
   cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-14.jpg',
+  dishes: [],
 }
 
 const Light_meal: CanteenWindow = {
@@ -20,6 +25,7 @@ const Light_meal: CanteenWindow = {
   path: 'Light_meal',
   chinese_name: "轻食五谷拌饭",
   cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-15.jpg',
+  dishes: [],
 }
 
 const Korean_fried_chicken: CanteenWindow = {
@@ -27,6 +33,7 @@ const Korean_fried_chicken: CanteenWindow = {
   path: 'Korean_fried_chicken',
   chinese_name: "韩式鸟叔炸鸡",
   cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+  dishes: [],
 }
 
 const Braised_dishes: CanteenWindow = {
@@ -34,6 +41,7 @@ const Braised_dishes: CanteenWindow = {
     path: 'Braised_dishes',
     chinese_name: "食尚卤",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Bibimap_Grain_noodle: CanteenWindow = {
@@ -41,6 +49,7 @@ const Bibimap_Grain_noodle: CanteenWindow = {
     path: 'Bibimap_Grain_noodle',
     chinese_name: "石锅拌饭·杂粮粉",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Omurice: CanteenWindow = {
@@ -48,6 +57,7 @@ const Omurice: CanteenWindow = {
     path: 'Omurice',
     chinese_name: "港式滑蛋饭",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Maocai_Spicy_pot: CanteenWindow = {
@@ -55,6 +65,7 @@ const Maocai_Spicy_pot: CanteenWindow = {
     path: 'Maocai_Spicy_pot',
     chinese_name: "成都冒菜，麻辣香锅",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Steamed_dishes: CanteenWindow = {
@@ -62,6 +73,7 @@ const Steamed_dishes: CanteenWindow = {
     path: 'Steamed_dishes',
     chinese_name: "蒸功夫",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Lanzhou_noodles: CanteenWindow = {
@@ -69,6 +81,7 @@ const Lanzhou_noodles: CanteenWindow = {
     path: 'Lanzhou_noodles',
     chinese_name: "兰州拉面",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Sliced_noodles: CanteenWindow = {
@@ -76,6 +89,7 @@ const Sliced_noodles: CanteenWindow = {
     path: 'Sliced_noodles',
     chinese_name: "河南烩面",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Rice_noodles: CanteenWindow = {
@@ -83,6 +97,7 @@ const Rice_noodles: CanteenWindow = {
     path: 'Rice_noodles',
     chinese_name: "特色水饺",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Hot_and_Dry_noodles_dumplings: CanteenWindow = {
@@ -90,6 +105,7 @@ const Hot_and_Dry_noodles_dumplings: CanteenWindow = {
     path: 'Hot_and_Dry_noodles_dumplings',
     chinese_name: "武汉热干面",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Beef_rice: CanteenWindow = {
@@ -97,6 +113,7 @@ const Beef_rice: CanteenWindow = {
     path: 'Beef_rice',
     chinese_name: "F+牛肉饭",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Chinese_pastry: CanteenWindow = {
@@ -104,6 +121,7 @@ const Chinese_pastry: CanteenWindow = {
     path: 'Chinese_pastry',
     chinese_name: "生煎苏式汤包",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Rice_set: CanteenWindow = {
@@ -111,6 +129,7 @@ const Rice_set: CanteenWindow = {
     path: 'Rice_set',
     chinese_name: "脆皮鸡饭，土耳其烤肉饭",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Teppanyaki: CanteenWindow = {
@@ -118,6 +137,7 @@ const Teppanyaki: CanteenWindow = {
     path: 'Teppanyaki',
     chinese_name: "铁板烧",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Roast_meat: CanteenWindow = {
@@ -125,6 +145,7 @@ const Roast_meat: CanteenWindow = {
     path: 'Roast_meat',
     chinese_name: "港式烧腊",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Superstar_hamburger: CanteenWindow = {
@@ -132,6 +153,7 @@ const Superstar_hamburger: CanteenWindow = {
     path: 'Superstar_hamburger',
     chinese_name: "巨星潮汉堡",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const GIMLID_pizza: CanteenWindow = {
@@ -139,6 +161,7 @@ const GIMLID_pizza: CanteenWindow = {
     path: 'GIMLID_pizza',
     chinese_name: "吉姆利德（四餐）",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Self_picking_dishes: CanteenWindow = {
@@ -146,6 +169,7 @@ const Self_picking_dishes: CanteenWindow = {
     path: 'Self_picking_dishes',
     chinese_name: "农家菜（四餐）",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Vermicelli_with_duck_blood_soup: CanteenWindow = {
@@ -153,6 +177,7 @@ const Vermicelli_with_duck_blood_soup: CanteenWindow = {
     path: 'Vermicelli_with_duck_blood_soup',
     chinese_name: "鸭血粉丝汤",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 const Hotchpotch: CanteenWindow = {
@@ -160,6 +185,7 @@ const Hotchpotch: CanteenWindow = {
     path: 'Hotchpotch',
     chinese_name: "鑫龙福麻辣烫",
     cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+    dishes: [],
 }
 
 export const Canteen4: Canteen = {

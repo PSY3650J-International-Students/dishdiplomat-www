@@ -6,6 +6,7 @@ const western_fast_food: CanteenWindow = {
   path: 'western_fast_food',
   chinese_name: "西式简餐",
   cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-12.jpg',
+  dishes: [],
 }
 
 const korean_fried_rice: CanteenWindow = {
@@ -13,6 +14,7 @@ const korean_fried_rice: CanteenWindow = {
   path: 'korean_fried_rice',
   chinese_name: "韩式烤盘饭",
   cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-14.jpg',
+  dishes: [],
 }
 
 const korean_kitchen: CanteenWindow = {
@@ -20,6 +22,7 @@ const korean_kitchen: CanteenWindow = {
   path: 'korean_kitchen',
   chinese_name: "韩式料理",
   cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-15.jpg',
+  dishes: [],
 }
 
 const fried_rice: CanteenWindow = {
@@ -27,6 +30,7 @@ const fried_rice: CanteenWindow = {
   path: 'fried_rice',
   chinese_name: "木桶饭",
   cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-16.jpg',
+  dishes: [],
 }
 
 export const Canteen2: Canteen = {

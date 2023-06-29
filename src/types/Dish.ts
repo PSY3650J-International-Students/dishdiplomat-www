@@ -3,8 +3,8 @@ export interface Dish{
     chinese_name: string,
     path: string,
     cover_picture: string | undefined,
-    flavor? :string[],
-    Side_dish? : string[],
-    Ingredients ?: string[],
+    flavor:string[],
+    Side_dish: string[],
+    Ingredients: string[],
     introduction: string,
 }

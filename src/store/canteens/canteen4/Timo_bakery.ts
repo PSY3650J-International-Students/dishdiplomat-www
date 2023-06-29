@@ -8,6 +8,9 @@ export const dishes_Timo: { [key: string]: Dish } = {
       path: 'dish1',
       cover_picture:'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-12.jpg',
       introduction: "lbcnb!",
+      flavor: [],
+      Side_dish: [],
+      Ingredients: [],
     },
     dish2: {
       name: "cake",
@@ -16,5 +19,7 @@ export const dishes_Timo: { [key: string]: Dish } = {
       cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-12.jpg',
       flavor: ["matcha"],
       introduction: "lbcnb!",
+      Side_dish: [],
+      Ingredients: [],
     },
 };

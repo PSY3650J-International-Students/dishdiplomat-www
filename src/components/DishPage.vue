@@ -30,7 +30,7 @@
   }
 
   const get_flavor_choices = (dish: Dish) => {
-    let flavors = dish.flavor
+    let flavors = dish.flavor as string[]
     return flavors.join(", ")
   }
 

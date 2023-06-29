@@ -43,6 +43,7 @@
   import { Canteen } from '@/types/Canteen';
 import { CanteenWindow } from '@/types/CanteenWindow';
 import { PropType, ref } from 'vue';
+import DishPage from './DishPage.vue';
   const props = defineProps(
     {
       window: {

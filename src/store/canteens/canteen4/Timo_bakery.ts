@@ -1,4 +1,4 @@
-import { Dish } from '@/types/Dish';
+import { Dish, Spicy, Religion } from '@/types/Dish';
 
 
 export const dishes_Timo: { [key: string]: Dish } = {
@@ -7,7 +7,8 @@ export const dishes_Timo: { [key: string]: Dish } = {
       chinese_name: "面包",
       path: 'dish1',
       cover_picture:'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-12.jpg',
-      introduction: "lbcnb!",
+      religion_restriction: [],
+      available_spicy_level: []
     },
     dish2: {
       name: "cake",
@@ -15,6 +16,7 @@ export const dishes_Timo: { [key: string]: Dish } = {
       path: 'dish2',
       cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-12.jpg',
       flavor: ["matcha"],
-      introduction: "lbcnb!",
+      available_spicy_level: [Spicy.Not_Spicy, Spicy.Mild, Spicy.Medium, Spicy.Hot, Spicy.Extra_Hot],
+      religion_restriction: [ Religion.Contains_Pork, Religion.Contains_Beef, Religion.Not_Vegetarian],
     },
 };

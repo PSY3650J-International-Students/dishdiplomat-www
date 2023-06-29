@@ -1,5 +1,5 @@
 export enum Spicy{
-  None = 0,
+  Not_Spicy = 0,
   Mild = 1,
   Medium = 2,
   Hot = 3,
@@ -18,7 +18,7 @@ export interface Dish{
     path: string,
     cover_picture: string | undefined,
     available_spicy_level : Spicy[],
-    religion_restriction : string[],
+    religion_restriction : Religion[],
     Side_dish? : string[],
     Ingredients ?: string[],
     flavor? : string[],

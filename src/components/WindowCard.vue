@@ -15,35 +15,15 @@
   </v-card>
   <v-spacer />
   <v-dialog v-model="dialogOpen" persistent max-width="500px"
+                                            fullscreen
           activator="parent"
-          width="auto"
         >
           <v-card>
             <v-card-text>
               <v-card-title>
               {{ props.window.name }}
               </v-card-title>
-              <v-list>
-                <v-list-item v-for="dish in window.dishes" :key="dish.name">
-                    {{ dish.name }}
-                    <v-list-item-icon>
-                        <v-img :src="dish.cover_picture" />
-                    </v-list-item-icon>
-                    Chinese name:
-                    {{ dish.chinese_name }}
-                    <br>
-                    {{ dish.introduction }}
-                    <br>
-                    <template v-if="dish.flavor && dish.flavor.length > 0">
-                        Flavor:
-                        <v-list>
-                          <v-list-item v-for="flavor in dish.flavor">
-                            {{ flavor }}
-                          </v-list-item>
-                        </v-list>
-                      </template>
-                  </v-list-item>
-              </v-list>
+            <DishPage :dish="dish" v-for="dish in props.window.dishes" />
             </v-card-text>
             <v-card-actions>
               <v-btn color="primary" @click="closeDialog">Close</v-btn>
@@ -55,8 +35,9 @@
 
 <script lang="ts" setup>
   import { Canteen } from '@/types/Canteen';
-import { CanteenWindow } from '@/types/CanteenWindow';
-import { PropType, ref } from 'vue';
+  import { CanteenWindow } from '@/types/CanteenWindow';
+  import { PropType, ref } from 'vue';
+  import DishPage from './DishPage.vue';
   const props = defineProps(
     {
       window: {

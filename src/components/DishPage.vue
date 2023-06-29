@@ -6,6 +6,9 @@
     <v-divider />
       <p><b>Available Spicy Levels: </b> {{ get_spicy_level_descriptions(props.dish) }} </p>
       <p><b>Religion Restrictions: </b> {{ get_religion_descriptions(props.dish) }} </p>
+      <p v-if="flavor_exists(props.dish)"><b>Available flavors: </b> {{ get_flavor_choices(props.dish) }} </p>
+    <v-divider />
+
   </div>
 </template>
 
@@ -18,6 +21,18 @@
       required: true
     }
   })
+
+  const flavor_exists = (dish: Dish) => {
+    if (dish.flavor === undefined) {
+      return false
+    }
+    return dish.flavor.length > 0
+  }
+
+  const get_flavor_choices = (dish: Dish) => {
+    let flavors = dish.flavor
+    return flavors.join(", ")
+  }
 
   const get_spicy_level_descriptions = (dish: Dish) => {
     let spicy_levels = dish.available_spicy_level

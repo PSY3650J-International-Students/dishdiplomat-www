@@ -20,7 +20,6 @@ export interface Dish{
     available_spicy_level : Spicy[],
     religion_restriction : Religion[],
     Side_dish? : string[],
-    Ingredients ?: string[],
     flavor? : string[],
     extra? : string,
 }

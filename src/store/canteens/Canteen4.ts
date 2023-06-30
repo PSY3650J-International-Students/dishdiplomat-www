@@ -17,7 +17,7 @@ const Spicy_Boiled_dishes: CanteenWindow = {
   name: 'Spicy Boiled dishes',
   path: 'Spicy_Boiled_dishes',
   chinese_name: "川湘水煮",
-  cover_picture: 'public/canteens/canteen4/ChuanXiang_Poach.jpg',
+  cover_picture: 'canteens/canteen4/ChuanXiang_Poach.jpg',
   dishes:Object.values(dishes_ChuanXiang) ,
 }
 

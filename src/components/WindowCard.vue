@@ -24,13 +24,19 @@
         </v-btn>
         <v-spacer></v-spacer>
       </v-toolbar>
-      <v-card-text style="max-height: 500px; overflow-y: auto;">
-      <v-carousel height="auto">
+      <v-card-text style="max-height: 600px; overflow-y: auto;">
+        <template v-if="window.dishes.length == 0">
+            Sorry, We will add dish later! 
+        </template>
+      <v-carousel cycle height=auto show-arrows="hover">
         <v-carousel-item v-for="dish in window.dishes" :key="dish.name">
           <v-card-text>
             <DishPage :dish="dish" />
           </v-card-text>              
         </v-carousel-item>
+        <br>
+        <br>
+        <br>
       </v-carousel>
     </v-card-text>
     </v-card>

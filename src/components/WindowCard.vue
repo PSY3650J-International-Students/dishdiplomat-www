@@ -1,10 +1,10 @@
 <template>
   <v-card
-    min-width=300px
-    max-width=340px
+    min-width="300px"
+    max-width="340px"
     class="mx-auto"
     @click.stop="openDialog"
-    >
+  >
     <v-img
       :src="props.window.cover_picture"
       width="100%"
@@ -14,29 +14,34 @@
     </v-card-title>
   </v-card>
   <v-spacer />
-  <v-dialog v-model="dialogOpen" persistent max-width="500px"
-                                            fullscreen
-          activator="parent"
-        >
-          <v-card>
-            <span>{{ '' }}</span>
-              <br>
-              <v-toolbar dense class="close-button-toolbar">
-                <v-btn icon @click="closeDialog">
-                <v-icon>mdi-close</v-icon>
-              </v-btn>
-                <v-spacer></v-spacer>
-              </v-toolbar>
-              <v-carousel height="500px">
-              <v-carousel-item v-for="dish in window.dishes" :key="dish.name">
-                <v-card-text>
-                  <DishPage :dish="dish" />
-                </v-card-text>              
-              </v-carousel-item>
-              </v-carousel>
-          </v-card>
-        </v-dialog>
+  <v-dialog v-model="dialogOpen" persistent max-width="500px" fullscreen activator="parent">
+    <v-card>
+      <span>{{ '' }}</span>
+      <br>
+      <v-toolbar dense class="close-button-toolbar">
+        <v-btn icon @click="closeDialog">
+          <v-icon>mdi-close</v-icon>
+        </v-btn>
+        <v-spacer></v-spacer>
+      </v-toolbar>
+      <v-card-text style="max-height: 500px; overflow-y: auto;">
+      <v-carousel height="auto">
+        <v-carousel-item v-for="dish in window.dishes" :key="dish.name">
+          <v-card-text>
+            <DishPage :dish="dish" />
+          </v-card-text>              
+        </v-carousel-item>
+      </v-carousel>
+    </v-card-text>
+    </v-card>
+  </v-dialog>
 </template>
+
+<style>
+.carousel-container {
+  overflow-y: auto;
+}
+</style>
 
 
 <script lang="ts" setup>

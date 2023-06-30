@@ -7,8 +7,8 @@ export const dishes_Timo: { [key: string]: Dish } = {
       chinese_name: "面包",
       path: 'dish1',
       cover_picture:'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-12.jpg',
-      religion_restriction: [],
-      available_spicy_level: []
+      religion_restriction: [Religion.No_taboo],
+      available_spicy_level: [Spicy.Not_Spicy]
     },
     dish2: {
       name: "cake",
@@ -16,7 +16,7 @@ export const dishes_Timo: { [key: string]: Dish } = {
       path: 'dish2',
       cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-12.jpg',
       flavor: ["matcha"],
-      available_spicy_level: [Spicy.Not_Spicy, Spicy.Mild, Spicy.Medium, Spicy.Hot, Spicy.Extra_Hot],
-      religion_restriction: [ Religion.Contains_Pork, Religion.Contains_Beef, Religion.Not_Vegetarian],
+      available_spicy_level: [Spicy.Not_Spicy],
+      religion_restriction: [ Religion.No_taboo],
     },
 };

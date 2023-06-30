@@ -16,7 +16,7 @@
         </v-list>
       </template>
       <b></b>
-      <template v-if="props.dish.Side_dish!= undefined">
+      <template v-if="props.dish.Side_dish != undefined">
         <b>Available dishes: </b> 
         <v-list>
         <v-list-item v-for=" dishes in props.dish.Side_dish">

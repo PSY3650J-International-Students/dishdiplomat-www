@@ -19,15 +19,21 @@
           activator="parent"
         >
           <v-card>
-            <v-card-text>
-              <v-card-title>
-              {{ props.window.name }}
-              </v-card-title>
-            <DishPage :dish="dish" v-for="dish in props.window.dishes" />
-            </v-card-text>
-            <v-card-actions>
-              <v-btn color="primary" @click="closeDialog">Close</v-btn>
-            </v-card-actions>
+            <span>{{ '' }}</span>
+              <br>
+              <v-toolbar dense class="close-button-toolbar">
+                <v-btn icon @click="closeDialog">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+                <v-spacer></v-spacer>
+              </v-toolbar>
+              <v-carousel height="500px">
+              <v-carousel-item v-for="dish in window.dishes" :key="dish.name">
+                <v-card-text>
+                  <DishPage :dish="dish" />
+                </v-card-text>              
+              </v-carousel-item>
+              </v-carousel>
           </v-card>
         </v-dialog>
 </template>
@@ -35,9 +41,9 @@
 
 <script lang="ts" setup>
   import { Canteen } from '@/types/Canteen';
-  import { CanteenWindow } from '@/types/CanteenWindow';
-  import { PropType, ref } from 'vue';
-  import DishPage from './DishPage.vue';
+import { CanteenWindow } from '@/types/CanteenWindow';
+import { PropType, ref } from 'vue';
+import DishPage from './DishPage.vue';
   const props = defineProps(
     {
       window: {

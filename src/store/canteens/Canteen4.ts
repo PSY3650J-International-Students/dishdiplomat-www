@@ -1,6 +1,7 @@
 import { Canteen } from '@/types/Canteen';
 import { CanteenWindow } from '@/types/CanteenWindow';
-import {dishes_Timo} from './canteen4/Timo_bakery';
+import { dishes_ChuanXiang } from './canteen4/ChuanXiang_poach';
+import { dishes_Timo } from './canteen4/Timo_bakery';
 
 
 
@@ -16,8 +17,8 @@ const Spicy_Boiled_dishes: CanteenWindow = {
   name: 'Spicy Boiled dishes',
   path: 'Spicy_Boiled_dishes',
   chinese_name: "川湘水煮",
-  cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-14.jpg',
-  dishes: [],
+  cover_picture: 'canteens/canteen4/ChuanXiang_Poach.jpg',
+  dishes:Object.values(dishes_ChuanXiang) ,
 }
 
 const Light_meal: CanteenWindow = {

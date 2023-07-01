@@ -27,6 +27,10 @@ const routes = [
       }
     ],
   },
+  {
+    path: '/order/:order_text',
+    component: () => import('@/views/OrderDisp.vue'),
+  }
 ]
 
 const router = createRouter({

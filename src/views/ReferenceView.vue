@@ -5,7 +5,7 @@
         <h1>License</h1>
       </v-list-item>
       <v-list-item>
-        <span>The website is operated under Apache License, Version 2.0. For the full text of the license, click <a href="https://www.apache.org/licenses/LICENSE-2.0.txt">here</a>.</span>
+        <span>The website is built and released under Apache License, Version 2.0. For the full text of the license, click <a href="https://www.apache.org/licenses/LICENSE-2.0.txt">here</a>.</span>
       </v-list-item>
       <v-list-item>
         <h1>References</h1>

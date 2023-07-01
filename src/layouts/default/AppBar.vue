@@ -2,8 +2,10 @@
   <v-navigation-drawer v-model="drawer" :location=drawer_location>
     <v-list>
       <v-list-item to="/">Home</v-list-item>
-      <v-spacer/>
+      <v-divider></v-divider>
       <v-list-item v-for="canteen in canteenListStore" :to=get_canteen_path(canteen) :title="canteen.name"></v-list-item>
+      <v-divider></v-divider>
+      <v-list-item to="/issues">Report Any Issues or Contact Us</v-list-item>
     </v-list>
   </v-navigation-drawer>
   <v-app-bar flat>

@@ -54,6 +54,12 @@
     repaint()
   })
 
+  // watch screen orientation change
+  window.addEventListener('orientationchange', () => {
+    resize_canvas()
+    repaint()
+  })
+
 </script>
 
 <style scoped>

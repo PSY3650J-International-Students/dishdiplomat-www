@@ -7,7 +7,7 @@
       <v-divider></v-divider>
       <v-list-item to="/issues">Report Any Issues</v-list-item>
     </v-list>
-    <p class="text-center bottom">Made with ❤️ by SJTU local students</p>
+    <p class="text-center bottom"><router-link to="/ref">References and License</router-link><br />Made with ❤️ by SJTU local students</p>
   </v-navigation-drawer>
   <v-app-bar flat>
     <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>

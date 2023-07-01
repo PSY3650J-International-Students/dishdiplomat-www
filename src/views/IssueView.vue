@@ -1,5 +1,5 @@
 <template>
-  <v-container class="fill-height">
+  <v-container>
     <v-list>
       <v-list-item>
           <h1>Any issues?</h1>

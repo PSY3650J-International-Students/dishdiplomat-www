@@ -61,12 +61,3 @@
   })
 
 </script>
-
-<style scoped>
-.content {
-  font-size: 50vh;
-  display: flex;
-  white-space: nowrap;
-  overflow: scroll;
-}
-</style>

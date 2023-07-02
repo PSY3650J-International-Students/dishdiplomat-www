@@ -6,11 +6,11 @@
     @click.stop="openDialog"
   >
     <v-img
-      :src="props.window.cover_picture"
+      :src="window.cover_picture"
       width="100%"
     ></v-img>
     <v-card-title>
-      {{ props.window.name }}
+      {{ window.name }}
     </v-card-title>
   </v-card>
   <v-spacer />
@@ -25,20 +25,27 @@
         <v-spacer></v-spacer>
       </v-toolbar>
       <v-card-text style="max-height: 600px; overflow-y: auto;">
-        <template v-if="window.dishes.length == 0">
-            Sorry, We will add dish later! 
+        <template v-if="window.dishes.length === 0">
+          Sorry, We will add dish later!
         </template>
-      <v-carousel cycle height=auto show-arrows="hover">
-        <v-carousel-item v-for="dish in window.dishes" :key="dish.name">
-          <v-card-text>
-            <DishPage :dish="dish" />
-          </v-card-text>              
-        </v-carousel-item>
-        <br>
-        <br>
-        <br>
-      </v-carousel>
-    </v-card-text>
+        <v-carousel cycle height="600px" show-arrows="hover">
+          <v-carousel-item v-for="dish in window.dishes" :key="dish.name">
+            <v-btn @click="selectDish(dish)">
+                {{ dish.selected ? 'Selected' : 'Select' }}
+            </v-btn>
+            <v-card-text>
+              <DishPage :dish="dish" />
+            </v-card-text>
+          </v-carousel-item> 
+        </v-carousel>
+      
+        <div v-if="selectedPages.length > 0">
+          <h3>Selected Dishes:</h3>
+          <v-card v-for="(page, index) in selectedPages" :key="index">
+            <p>{{ page }}</p>
+          </v-card>
+        </div>
+      </v-card-text>
     </v-card>
   </v-dialog>
 </template>
@@ -49,12 +56,12 @@
 }
 </style>
 
-
 <script lang="ts" setup>
-  import { Canteen } from '@/types/Canteen';
+import { Canteen } from '@/types/Canteen';
 import { CanteenWindow } from '@/types/CanteenWindow';
 import { PropType, ref } from 'vue';
 import DishPage from './DishPage.vue';
+//import { Dish } from '@/types/Dish';
   const props = defineProps(
     {
       window: {
@@ -71,17 +78,32 @@ import DishPage from './DishPage.vue';
     return '/canteen/'+canteen.path+'/'+window.path
   }
 
-  const dialogOpen = ref(false)
-  let dialogTimer: ReturnType<typeof setTimeout> | null = null
 
-    const openDialog = (event?: Event) => {
+const dialogOpen = ref(false);
+const selectedPages = ref<string[]>([]);
+
+const openDialog = (event?: Event) => {
   if (event) {
     event.stopPropagation();
   }
   dialogOpen.value = true;
 };
 
-  const closeDialog = () => {
-      dialogOpen.value = false
+const closeDialog = () => {
+  dialogOpen.value = false;
+};
+
+const selectDish = (dish: any) => {
+  dish.selected = !dish.selected;
+
+  if (dish.selected) {
+    selectedPages.value.push(dish.name);
+  } else {
+    const index = selectedPages.value.indexOf(dish.name);
+    if (index !== -1) {
+      selectedPages.value.splice(index, 1);
+    }
   }
+};
+
 </script>

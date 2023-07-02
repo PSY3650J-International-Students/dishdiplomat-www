@@ -24,4 +24,5 @@ export interface Dish{
     Side_dish? : string[],
     flavor? : string[],
     extra? : string,
+    selected: boolean,
 }

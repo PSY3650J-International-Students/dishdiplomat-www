@@ -46,6 +46,7 @@ import { Dish } from '@/types/Dish';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const props = defineProps({
   dish: {
     type: Object as () => Dish,
@@ -128,8 +129,7 @@ const addToOrderedDish = () => {
     selectedFlavor = "";
     selectedSpicyLevel = Infinity;
 
-    const router = useRouter();
-    router.push(`/order/${chineseOrder}`);
+    router.push({ name: "Order", params: { order_text: chineseOrder } });
   }
 };
 

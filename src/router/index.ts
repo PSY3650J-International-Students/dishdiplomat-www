@@ -38,6 +38,7 @@ const routes = [
   },
   {
     path: '/order/:order_text',
+    name: 'Order',
     component: () => import('@/views/OrderDisp.vue'),
   }
 ]

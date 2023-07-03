@@ -27,7 +27,7 @@
     <b>Available Spicy Levels: </b>
     <select v-model="selectedSpicyLevel">
       <option value="">Select spicy level here</option>
-      <option v-for="level in spicyLevels" :value="level">{{ getSpicyLevelDescription(level) }}</option>
+      <option v-for="level in props.dish.available_spicy_level" :value="level">{{ level }}</option>
     </select>
     <!-- <v-btn @click="addToOrderedDish">Add to Order</v-btn> -->
   </div>
@@ -44,6 +44,7 @@
 import { dishes_ChuanXiang } from '@/store/canteens/canteen4/ChuanXiang_poach';
 import { Dish } from '@/types/Dish';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 const props = defineProps({
   dish: {
@@ -98,37 +99,19 @@ let selectedSpicyLevel = '';
 // Define the ordered dishes
 let orderedDish = ref<string[]>([]);
 
-// Function to get the description of a spicy level
-const getSpicyLevelDescription = (level: number) => {
-  switch (level) {
-    case 0:
-      return 'Not Spicy';
-    case 1:
-      return 'Mild';
-    case 2:
-      return 'Medium';
-    case 3:
-      return 'Hot';
-    case 4:
-      return 'Extra Hot';
-    default:
-      return '';
-  }
-};
-
 const addToOrderedDish = () => {
-  if (selectedFlavor && selectedSpicyLevel) {
+  if (selectedFlavor || selectedSpicyLevel) {
     let spicyLevelLabel = "";
 
-    if (selectedSpicyLevel === "0") {
+    if (selectedSpicyLevel === "Not Spicy") {
       spicyLevelLabel = "不辣的";
-    } else if (selectedSpicyLevel === "1") {
+    } else if (selectedSpicyLevel === "Mild") {
       spicyLevelLabel = "微辣的";
-    } else if (selectedSpicyLevel === "2") {
+    } else if (selectedSpicyLevel === "Medium") {
       spicyLevelLabel = "正常辣的";
-    } else if (selectedSpicyLevel === "3") {
+    } else if (selectedSpicyLevel === "Hot") {
       spicyLevelLabel = "加辣的";
-    } else if (selectedSpicyLevel === "4") {
+    } else if (selectedSpicyLevel === "Extra Hot") {
       spicyLevelLabel = "变态辣的";
     }
 
@@ -139,11 +122,14 @@ const addToOrderedDish = () => {
       flavorLabel = "抹茶"
     }
 
-    const chineseOrder = `您好，我要一份${spicyLevelLabel}${flavorLabel}${props.dish.chinese_name}`;
+    const chineseOrder = `您好，我要一份${selectedSpicyLevel}${flavorLabel}${props.dish.chinese_name}`;
 
     orderedDish.value.push(chineseOrder);
     selectedFlavor = "";
     selectedSpicyLevel = "";
+
+    const router = useRouter();
+    router.push(`/order/${chineseOrder}`);
   }
 };
 
@@ -168,6 +154,7 @@ const addToOrderedDish = () => {
     }
     return religion_descriptions.join(", ")
   }
+
 </script>
 
 

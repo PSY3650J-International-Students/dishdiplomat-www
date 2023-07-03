@@ -31,13 +31,7 @@
     </select>
     <!-- <v-btn @click="addToOrderedDish">Add to Order</v-btn> -->
   </div>
-    <div>
-      <h3>Ordered Dishes:</h3>
-      <ul>
-        <li v-for="dish in orderedDish" :key="dish">{{ dish }}</li>
-      </ul>
-    </div>
-    <v-btn @click="addToOrderedDish">Add to Order</v-btn>
+  <v-btn @click="addToOrderedDish">Add to Order</v-btn>
 </template>
 
 <script lang="ts" setup>
@@ -97,9 +91,6 @@ const spicyLevels = [0, 1, 2, 3, 4];
 let selectedFlavor = '';
 let selectedSpicyLevel = Infinity;
 
-// Define the ordered dishes
-let orderedDish = ref<string[]>([]);
-
 const addToOrderedDish = () => {
   if (selectedFlavor || selectedSpicyLevel) {
     let spicyLevelLabel = "";
@@ -124,10 +115,6 @@ const addToOrderedDish = () => {
     }
 
     const chineseOrder = `您好，我要一份${spicyLevelLabel}${flavorLabel}${props.dish.chinese_name}`;
-
-    orderedDish.value.push(chineseOrder);
-    selectedFlavor = "";
-    selectedSpicyLevel = Infinity;
 
     router.push({ name: "Order", params: { order_text: chineseOrder } });
   }

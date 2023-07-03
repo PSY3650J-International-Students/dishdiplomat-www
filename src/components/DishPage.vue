@@ -94,7 +94,7 @@ const spicyLevels = [0, 1, 2, 3, 4];
 
 // Define the selected values for flavor and spicy level
 let selectedFlavor = '';
-let selectedSpicyLevel = '';
+let selectedSpicyLevel = Infinity;
 
 // Define the ordered dishes
 let orderedDish = ref<string[]>([]);
@@ -103,15 +103,15 @@ const addToOrderedDish = () => {
   if (selectedFlavor || selectedSpicyLevel) {
     let spicyLevelLabel = "";
 
-    if (selectedSpicyLevel === "Not Spicy") {
+    if (selectedSpicyLevel === 0) {
       spicyLevelLabel = "不辣的";
-    } else if (selectedSpicyLevel === "Mild") {
+    } else if (selectedSpicyLevel === 1) {
       spicyLevelLabel = "微辣的";
-    } else if (selectedSpicyLevel === "Medium") {
+    } else if (selectedSpicyLevel === 2) {
       spicyLevelLabel = "正常辣的";
-    } else if (selectedSpicyLevel === "Hot") {
+    } else if (selectedSpicyLevel === 3) {
       spicyLevelLabel = "加辣的";
-    } else if (selectedSpicyLevel === "Extra Hot") {
+    } else if (selectedSpicyLevel === 4) {
       spicyLevelLabel = "变态辣的";
     }
 
@@ -122,11 +122,11 @@ const addToOrderedDish = () => {
       flavorLabel = "抹茶"
     }
 
-    const chineseOrder = `您好，我要一份${selectedSpicyLevel}${flavorLabel}${props.dish.chinese_name}`;
+    const chineseOrder = `您好，我要一份${spicyLevelLabel}${flavorLabel}${props.dish.chinese_name}`;
 
     orderedDish.value.push(chineseOrder);
     selectedFlavor = "";
-    selectedSpicyLevel = "";
+    selectedSpicyLevel = Infinity;
 
     const router = useRouter();
     router.push(`/order/${chineseOrder}`);

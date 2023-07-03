@@ -7,6 +7,7 @@ export const dishes_Timo: { [key: string]: Dish } = {
       chinese_name: "面包",
       path: 'dish1',
       cover_picture:'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-12.jpg',
+      flavor: [],
       religion_restriction: [Religion.No_taboo],
       available_spicy_level: [Spicy.Not_Spicy]
     },

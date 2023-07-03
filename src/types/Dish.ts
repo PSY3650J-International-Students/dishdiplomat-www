@@ -13,6 +13,15 @@ export enum Religion {
   No_taboo = 3,
 }
 
+export class Flavor {
+  chinese_name: string = "";
+  english_name: string = "";
+  constructor(_chinese_name: string, _english_name: string) {
+    this.chinese_name = _chinese_name
+    this.english_name = _english_name
+  }
+}
+
 export interface Dish{
     name: string,
     chinese_name: string,
@@ -22,6 +31,6 @@ export interface Dish{
     available_spicy_level : Spicy[],
     religion_restriction : Religion[],
     Side_dish? : string[],
-    flavor? : string[],
+    flavor? : Flavor[],
     extra? : string,
 }

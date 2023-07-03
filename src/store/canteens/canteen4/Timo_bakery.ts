@@ -1,4 +1,7 @@
-import { Dish, Spicy, Religion } from '@/types/Dish';
+import { Dish, Spicy, Religion, Flavor } from '@/types/Dish';
+
+
+const flavors_const: Flavor[] = [new Flavor("抹茶", "Matcha")]
 
 
 export const dishes_Timo: { [key: string]: Dish } = {
@@ -16,7 +19,7 @@ export const dishes_Timo: { [key: string]: Dish } = {
       chinese_name: "蛋糕",
       path: 'dish2',
       cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-12.jpg',
-      flavor: ["matcha"],
+      flavor: flavors_const,
       available_spicy_level: [Spicy.Not_Spicy],
       religion_restriction: [ Religion.No_taboo],
     },

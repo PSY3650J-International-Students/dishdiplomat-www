@@ -36,7 +36,7 @@
 
 <script lang="ts" setup>
 import { dishes_ChuanXiang } from '@/store/canteens/canteen4/ChuanXiang_poach';
-import { Dish } from '@/types/Dish';
+import { Dish, Flavor } from '@/types/Dish';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -56,8 +56,15 @@ const flavor_exists = (dish: Dish) => {
 };
 
 const get_flavor_choices = (dish: Dish) => {
-  let flavors = dish.flavor as string[];
-  return flavors.join(', ');
+  let flavors = dish.flavor;
+  let flavor_str = [] as string[];
+  if (flavors === undefined) {
+    return "Empty"
+  }
+  for (var flavor of (flavors as Flavor[])) {
+    flavor_str.push(flavor.english_name);
+  }
+  return flavor_str.join(', ');
 };
 
 const get_spicy_level_descriptions = (dish: Dish) => {
@@ -107,12 +114,19 @@ const addToOrderedDish = () => {
       spicyLevelLabel = "变态辣的";
     }
 
-    let flavorLabel = "常规";
-    if (selectedFlavor === "Sweet"){
-      flavorLabel = "甜口"
-    } else if(selectedFlavor === "matcha"){
-      flavorLabel = "抹茶"
+    var flavorLabel = "";
+    if (props.dish.flavor !== undefined) {
+
+      const dishFlavors: Flavor[] = props.dish.flavor as Flavor[];
+      for (var _flavor of dishFlavors) {
+        if (_flavor.english_name === selectedFlavor) {
+          flavorLabel = _flavor.chinese_name;
+          break;
+        }
+      }
     }
+
+
 
     const chineseOrder = `您好，我要一份${spicyLevelLabel}${flavorLabel}${props.dish.chinese_name}`;
 

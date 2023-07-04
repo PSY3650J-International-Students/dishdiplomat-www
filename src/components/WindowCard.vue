@@ -28,16 +28,38 @@
         <template v-if="window.dishes.length == 0">
             Sorry, We will add dish later! 
         </template>
-      <v-carousel cycle height=auto show-arrows="hover">
-        <v-carousel-item v-for="dish in window.dishes" :key="dish.name">
+      <v-window height=auto show-arrows="hover">
+        <template v-slot:prev="{ props }">
+      <v-btn
+        variant="outlined"
+        size="x-small"
+        color="blue"
+        density="comfortable"
+        @click="props.onClick"
+        icon= "mdi-arrow-left"
+      >
+      </v-btn>
+    </template>
+    <template v-slot:next="{ props }">
+      <v-btn
+        variant="outlined"
+        size="x-small"
+        color="blue"
+        density="comfortable"
+        @click="props.onClick"
+        icon= "mdi-arrow-right"
+      >
+      </v-btn>
+    </template>
+        <v-window-item v-for="dish in window.dishes" :key="dish.name">
           <v-card-text>
             <DishPage :dish="dish" />
           </v-card-text>              
-        </v-carousel-item>
+        </v-window-item>
         <br>
         <br>
         <br>
-      </v-carousel>
+      </v-window>
     </v-card-text>
     </v-card>
   </v-dialog>

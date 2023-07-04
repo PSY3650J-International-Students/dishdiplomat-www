@@ -28,13 +28,12 @@
         <template v-if="window.dishes.length == 0">
             Sorry, We will add dish later! 
         </template>
-      <v-window height=auto show-arrows="hover">
+      <v-window height=auto>
         <template v-slot:prev="{ props }">
       <v-btn
-        variant="outlined"
-        size="x-small"
-        color="blue"
+        variant="tonal"
         density="comfortable"
+        color="#2979FF"
         @click="props.onClick"
         icon= "mdi-arrow-left"
       >
@@ -42,10 +41,9 @@
     </template>
     <template v-slot:next="{ props }">
       <v-btn
-        variant="outlined"
-        size="x-small"
-        color="blue"
+        variant="tonal"
         density="comfortable"
+        color="#2979FF"
         @click="props.onClick"
         icon= "mdi-arrow-right"
       >

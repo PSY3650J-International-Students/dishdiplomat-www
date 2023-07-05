@@ -141,7 +141,12 @@ const orderDish = () => {
   const selected_flavor = selectedFlavor.value
   var ch_selected_flavor = ""
 
-  for (var flavor of props.dish.flavor as Flavor[]) {
+  var flavor_list : Flavor[] = []
+  if (props.dish.flavor !== undefined) {
+    flavor_list = props.dish.flavor
+  }
+
+  for (var flavor of flavor_list) {
     if (flavor.english_name === selected_flavor) {
       ch_selected_flavor = flavor.chinese_name
     }

@@ -137,7 +137,10 @@ const get_religion_descriptions = (dish: Dish) => {
 
 const orderDish = () => {
   const selected_spicy_level= eng_spicy(selectedSpicyLevel.value)
-  const ch_selected_spicy_level = spicy_chn(selected_spicy_level)
+  var ch_selected_spicy_level = spicy_chn(selected_spicy_level)
+  if (selectedSpicyLevel.value === "") {
+    ch_selected_spicy_level = ""
+  }
   const selected_flavor = selectedFlavor.value
   var ch_selected_flavor = ""
 

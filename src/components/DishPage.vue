@@ -140,7 +140,8 @@ const orderDish = () => {
   const ch_selected_spicy_level = spicy_chn(selected_spicy_level)
   const selected_flavor = selectedFlavor.value
   var ch_selected_flavor = ""
-  for (var flavor of props.dish.flavor) {
+
+  for (var flavor of props.dish.flavor as Flavor[]) {
     if (flavor.english_name === selected_flavor) {
       ch_selected_flavor = flavor.chinese_name
     }

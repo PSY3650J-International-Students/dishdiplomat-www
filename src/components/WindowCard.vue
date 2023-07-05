@@ -24,12 +24,16 @@
         </v-btn>
         <v-spacer></v-spacer>
       </v-toolbar>
-      <v-card-text style="max-height: 600px; overflow-y: auto;">
+      <v-card-text style="overflow-y: auto;">
         <template v-if="window.dishes.length == 0">
-          <p class="text-center absent-text text-align-center">
+          <p class="text-center absent-text">
             Sorry! This area is still under construction.
           </p>
         </template>
+        <template v-else>
+          <DishWindow :dishes=props.window.dishes />
+        </template>
+
       </v-card-text>
     </v-card>
   </v-dialog>
@@ -48,9 +52,10 @@
 
 <script lang="ts" setup>
   import { Canteen } from '@/types/Canteen';
-import { CanteenWindow } from '@/types/CanteenWindow';
-import { PropType, ref } from 'vue';
-import DishPage from './DishPage.vue';
+  import { CanteenWindow } from '@/types/CanteenWindow';
+  import { PropType, ref } from 'vue';
+  import DishPage from './DishPage.vue';
+  import DishWindow from './DishWindow.vue';
   const props = defineProps(
     {
       window: {

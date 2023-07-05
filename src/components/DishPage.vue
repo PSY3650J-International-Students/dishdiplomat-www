@@ -1,15 +1,15 @@
 <template>
-  <div>
-    <v-img :src="props.dish.cover_picture" :alt="props.dish.picture_title" />
-    <h1>{{ props.dish.name }}</h1>
-    <h2>{{ props.dish.chinese_name }}</h2>
+  <v-container>
+      <v-img :src="props.dish.cover_picture" :alt="props.dish.picture_title" />
+      <h1>{{ props.dish.name }}</h1>
+      <h2>{{ props.dish.chinese_name }}</h2>
     <v-divider />
-    <p v-if="props.dish.available_spicy_level.length !== 0">
-      <b>Available Spicy Levels: </b> {{ get_spicy_level_descriptions(props.dish) }}
-    </p>
-    <p v-if="props.dish.religion_restriction.length !== 0">
-      <b>Religion Restrictions: </b> {{ get_religion_descriptions(props.dish) }}
-    </p>
+      <p v-if="props.dish.available_spicy_level.length !== 0">
+        <b>Available Spicy Levels: </b> {{ get_spicy_level_descriptions(props.dish) }}
+      </p>
+      <p v-if="props.dish.religion_restriction.length !== 0">
+        <b>Religion Restrictions: </b> {{ get_religion_descriptions(props.dish) }}
+      </p>
     <template v-if="flavor_exists(props.dish)">
       <b>Available flavors: </b>
       <select v-model="selectedFlavor">
@@ -30,8 +30,8 @@
       <option v-for="level in props.dish.available_spicy_level" :value="level">{{ level }}</option>
     </select>
     <!-- <v-btn @click="addToOrderedDish">Add to Order</v-btn> -->
-  </div>
-  <v-btn @click="addToOrderedDish">Add to Order</v-btn>
+      <v-btn @click="addToOrderedDish">Order it!</v-btn>
+  </v-container>
 </template>
 
 <script lang="ts" setup>

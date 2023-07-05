@@ -10,13 +10,12 @@
       <p v-if="props.dish.religion_restriction.length !== 0">
         <b>Religion Restrictions: </b> {{ get_religion_descriptions(props.dish) }}
       </p>
-    <template v-if="flavor_exists(props.dish)">
       <b>Available flavors: </b>
-      <select v-model="selectedFlavor">
-      <option value="">Select a flavor here</option>
-      <option v-for="flavor in props.dish.flavor" :value="flavor">{{ flavor }}</option>
-      </select>
-    </template>
+      <v-select
+              v-model="selectedFlavor"
+              :items="flavorList"
+              :disabled="!flavor_exists(props.dish)"
+              />
     <template v-if="props.dish.Side_dish !== undefined">
       <b>Available dishes: </b>
       <v-list>
@@ -25,20 +24,24 @@
     </template>
     <v-divider />
     <b>Available Spicy Levels: </b>
-    <select v-model="selectedSpicyLevel">
-      <option value="">Select spicy level here</option>
-      <option v-for="level in props.dish.available_spicy_level" :value="level">{{ level }}</option>
-    </select>
+    <v-select
+                     v-model="selectedSpicyLevel"
+                     :items="spicyLevelList"
+                     />
     <!-- <v-btn @click="addToOrderedDish">Add to Order</v-btn> -->
-      <v-btn @click="addToOrderedDish">Order it!</v-btn>
   </v-container>
 </template>
 
 <script lang="ts" setup>
 import { dishes_ChuanXiang } from '@/store/canteens/canteen4/ChuanXiang_poach';
-import { Dish, Flavor } from '@/types/Dish';
+import { Dish, Flavor, spicy_eng } from '@/types/Dish';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+
+// Define the selected values for flavor and spicy level
+const selectedFlavor = ref<string>('');
+
+const selectedSpicyLevel = ref<string>('');
 
 const router = useRouter();
 const props = defineProps({
@@ -47,6 +50,21 @@ const props = defineProps({
     required: true,
   },
 });
+
+const flavorList = ref<string[]>([]);
+if (props.dish.flavor !== undefined) {
+  for (var flavor of props.dish.flavor) {
+    flavorList.value.push(flavor.english_name);
+  }
+}
+
+const spicyLevelList = ref<string[]>([]);
+if (props.dish.available_spicy_level !== undefined) {
+  for (var level of props.dish.available_spicy_level) {
+    spicyLevelList.value.push(spicy_eng(level));
+  }
+}
+
 
 const flavor_exists = (dish: Dish) => {
   if (dish.flavor === undefined) {
@@ -93,46 +111,6 @@ const get_spicy_level_descriptions = (dish: Dish) => {
 
 // Define the options for spicy levels
 const spicyLevels = [0, 1, 2, 3, 4];
-
-// Define the selected values for flavor and spicy level
-let selectedFlavor = '';
-let selectedSpicyLevel = Infinity;
-
-const addToOrderedDish = () => {
-  if (selectedFlavor || selectedSpicyLevel) {
-    let spicyLevelLabel = "";
-
-    if (selectedSpicyLevel === 0) {
-      spicyLevelLabel = "不辣的";
-    } else if (selectedSpicyLevel === 1) {
-      spicyLevelLabel = "微辣的";
-    } else if (selectedSpicyLevel === 2) {
-      spicyLevelLabel = "正常辣的";
-    } else if (selectedSpicyLevel === 3) {
-      spicyLevelLabel = "加辣的";
-    } else if (selectedSpicyLevel === 4) {
-      spicyLevelLabel = "变态辣的";
-    }
-
-    var flavorLabel = "";
-    if (props.dish.flavor !== undefined) {
-
-      const dishFlavors: Flavor[] = props.dish.flavor as Flavor[];
-      for (var _flavor of dishFlavors) {
-        if (_flavor.english_name === selectedFlavor) {
-          flavorLabel = _flavor.chinese_name;
-          break;
-        }
-      }
-    }
-
-
-
-    const chineseOrder = `您好，我要一份${spicyLevelLabel}${flavorLabel}${props.dish.chinese_name}`;
-
-    router.push({ name: "Order", params: { order_text: chineseOrder } });
-  }
-};
 
 
   const get_religion_descriptions = (dish: Dish) => {

@@ -45,8 +45,8 @@
       },
     }
   )
-  const cur_dish_num = ref<int>(1)
-  const length = ref<int>(props.dishes.length)
+  const cur_dish_num = ref<number>(1)
+  const length = ref<number>(props.dishes.length)
   const next = () => {
     cur_dish_num.value++;
   }

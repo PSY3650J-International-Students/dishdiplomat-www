@@ -22,6 +22,40 @@ export class Flavor {
   }
 }
 
+export const spicy_eng = ( spicy: Spicy): string => {
+  switch (spicy) {
+    case Spicy.Not_Spicy:
+      return "Not Spicy"
+    case Spicy.Mild:
+      return "Mild"
+    case Spicy.Medium:
+      return "Medium"
+    case Spicy.Hot:
+      return "Hot"
+    case Spicy.Extra_Hot:
+      return "Extra Hot"
+    default:
+      return "Not Spicy"
+  }
+};
+
+export const eng_spicy = ( spicy: string): Spicy => {
+  switch (spicy) {
+    case "Not Spicy":
+      return Spicy.Not_Spicy
+    case "Mild":
+      return Spicy.Mild
+    case "Medium":
+      return Spicy.Medium
+    case "Hot":
+      return Spicy.Hot
+    case "Extra Hot":
+      return Spicy.Extra_Hot
+    default:
+      return Spicy.Not_Spicy
+  }
+};
+
 export interface Dish{
     name: string,
     chinese_name: string,

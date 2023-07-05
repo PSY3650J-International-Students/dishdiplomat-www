@@ -26,19 +26,11 @@
       </v-toolbar>
       <v-card-text style="max-height: 600px; overflow-y: auto;">
         <template v-if="window.dishes.length == 0">
-            Sorry, We will add dish later! 
+          <p class="text-center absent-text text-align-center">
+            Sorry! This area is still under construction.
+          </p>
         </template>
-      <v-carousel cycle height=auto show-arrows="hover">
-        <v-carousel-item v-for="dish in window.dishes" :key="dish.name">
-          <v-card-text>
-            <DishPage :dish="dish" />
-          </v-card-text>              
-        </v-carousel-item>
-        <br>
-        <br>
-        <br>
-      </v-carousel>
-    </v-card-text>
+      </v-card-text>
     </v-card>
   </v-dialog>
 </template>
@@ -47,6 +39,10 @@
 .carousel-container {
   overflow-y: auto;
 }
+  .absent-text {
+    color: grey;
+    font-size: 20px;
+  }
 </style>
 
 

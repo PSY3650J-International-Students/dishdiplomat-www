@@ -56,6 +56,23 @@ export const eng_spicy = ( spicy: string): Spicy => {
   }
 };
 
+export const spicy_chn = ( spicy: Spicy): string => {
+  switch (spicy) {
+    case Spicy.Not_Spicy:
+      return "不辣"
+    case Spicy.Mild:
+      return "微辣"
+    case Spicy.Medium:
+      return "中辣"
+    case Spicy.Hot:
+      return "重辣"
+    case Spicy.Extra_Hot:
+      return "特辣"
+    default:
+      return "不辣"
+  }
+};
+
 export interface Dish{
     name: string,
     chinese_name: string,

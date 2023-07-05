@@ -29,12 +29,13 @@
                      :items="spicyLevelList"
                      />
     <!-- <v-btn @click="addToOrderedDish">Add to Order</v-btn> -->
+    <v-btn @click="orderDish">Order</v-btn>
   </v-container>
 </template>
 
 <script lang="ts" setup>
 import { dishes_ChuanXiang } from '@/store/canteens/canteen4/ChuanXiang_poach';
-import { Dish, Flavor, spicy_eng } from '@/types/Dish';
+import { Dish, Flavor, spicy_eng, eng_spicy, spicy_chn } from '@/types/Dish';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -113,26 +114,44 @@ const get_spicy_level_descriptions = (dish: Dish) => {
 const spicyLevels = [0, 1, 2, 3, 4];
 
 
-  const get_religion_descriptions = (dish: Dish) => {
-    let religions = dish.religion_restriction
-    let religion_descriptions = []
-    if (religions.length == 0) {
-      return "None"
-    }
-    if (religions.includes(0)) {
-      religion_descriptions.push("Contains pork")
-    }
-    if (religions.includes(1)) {
-      religion_descriptions.push("Contains beef")
-    }
-    if (religions.includes(2)) {
-      religion_descriptions.push("Not suitatble for vegetarians")
-    }
-    if(religions.includes(3)){
-      religion_descriptions.push("No taboo")
-    }
-    return religion_descriptions.join(", ")
+const get_religion_descriptions = (dish: Dish) => {
+  let religions = dish.religion_restriction
+  let religion_descriptions = []
+  if (religions.length == 0) {
+    return "None"
   }
+  if (religions.includes(0)) {
+    religion_descriptions.push("Contains pork")
+  }
+  if (religions.includes(1)) {
+    religion_descriptions.push("Contains beef")
+  }
+  if (religions.includes(2)) {
+    religion_descriptions.push("Not suitatble for vegetarians")
+  }
+  if(religions.includes(3)){
+    religion_descriptions.push("No taboo")
+  }
+  return religion_descriptions.join(", ")
+}
+
+const orderDish = () => {
+  const selected_spicy_level= eng_spicy(selectedSpicyLevel.value)
+  const ch_selected_spicy_level = spicy_chn(selected_spicy_level)
+  const selected_flavor = selectedFlavor.value
+  var ch_selected_flavor = ""
+  for (var flavor of props.dish.flavor) {
+    if (flavor.english_name === selected_flavor) {
+      ch_selected_flavor = flavor.chinese_name
+    }
+  }
+
+  const ch_str_list = [ "我想要", props.dish.chinese_name, ch_selected_flavor, ch_selected_spicy_level ]
+
+  const ch_str = ch_str_list.join(" ")
+  router.push({ name: 'Order', params: { order_text: ch_str } })
+
+}
 
 </script>
 

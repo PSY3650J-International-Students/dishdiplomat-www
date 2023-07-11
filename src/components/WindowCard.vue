@@ -24,41 +24,17 @@
         </v-btn>
         <v-spacer></v-spacer>
       </v-toolbar>
-      <v-card-text style="max-height: 600px; overflow-y: auto;">
+      <v-card-text style="overflow-y: auto;">
         <template v-if="window.dishes.length == 0">
-            Sorry, We will add dish later! 
+          <p class="text-center absent-text">
+            Sorry! This area is still under construction.
+          </p>
         </template>
-      <v-window height=auto>
-        <template v-slot:prev="{ props }">
-      <v-btn
-        variant="tonal"
-        density="comfortable"
-        color="#2979FF"
-        @click="props.onClick"
-        icon= "mdi-arrow-left"
-      >
-      </v-btn>
-    </template>
-    <template v-slot:next="{ props }">
-      <v-btn
-        variant="tonal"
-        density="comfortable"
-        color="#2979FF"
-        @click="props.onClick"
-        icon= "mdi-arrow-right"
-      >
-      </v-btn>
-    </template>
-        <v-window-item v-for="dish in window.dishes" :key="dish.name">
-          <v-card-text>
-            <DishPage :dish="dish" />
-          </v-card-text>              
-        </v-window-item>
-        <br>
-        <br>
-        <br>
-      </v-window>
-    </v-card-text>
+        <template v-else>
+          <DishWindow :dishes=props.window.dishes />
+        </template>
+
+      </v-card-text>
     </v-card>
   </v-dialog>
 </template>
@@ -67,14 +43,19 @@
 .carousel-container {
   overflow-y: auto;
 }
+  .absent-text {
+    color: grey;
+    font-size: 20px;
+  }
 </style>
 
 
 <script lang="ts" setup>
   import { Canteen } from '@/types/Canteen';
-import { CanteenWindow } from '@/types/CanteenWindow';
-import { PropType, ref } from 'vue';
-import DishPage from './DishPage.vue';
+  import { CanteenWindow } from '@/types/CanteenWindow';
+  import { PropType, ref } from 'vue';
+  import DishPage from './DishPage.vue';
+  import DishWindow from './DishWindow.vue';
   const props = defineProps(
     {
       window: {

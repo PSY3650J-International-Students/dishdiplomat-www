@@ -13,6 +13,66 @@ export enum Religion {
   No_taboo = 3,
 }
 
+export class Flavor {
+  chinese_name: string = "";
+  english_name: string = "";
+  constructor(_chinese_name: string, _english_name: string) {
+    this.chinese_name = _chinese_name
+    this.english_name = _english_name
+  }
+}
+
+export const spicy_eng = ( spicy: Spicy): string => {
+  switch (spicy) {
+    case Spicy.Not_Spicy:
+      return "Not Spicy"
+    case Spicy.Mild:
+      return "Mild"
+    case Spicy.Medium:
+      return "Medium"
+    case Spicy.Hot:
+      return "Hot"
+    case Spicy.Extra_Hot:
+      return "Extra Hot"
+    default:
+      return "Not Spicy"
+  }
+};
+
+export const eng_spicy = ( spicy: string): Spicy => {
+  switch (spicy) {
+    case "Not Spicy":
+      return Spicy.Not_Spicy
+    case "Mild":
+      return Spicy.Mild
+    case "Medium":
+      return Spicy.Medium
+    case "Hot":
+      return Spicy.Hot
+    case "Extra Hot":
+      return Spicy.Extra_Hot
+    default:
+      return Spicy.Not_Spicy
+  }
+};
+
+export const spicy_chn = ( spicy: Spicy): string => {
+  switch (spicy) {
+    case Spicy.Not_Spicy:
+      return "不辣"
+    case Spicy.Mild:
+      return "微辣"
+    case Spicy.Medium:
+      return "中辣"
+    case Spicy.Hot:
+      return "重辣"
+    case Spicy.Extra_Hot:
+      return "特辣"
+    default:
+      return "不辣"
+  }
+};
+
 export interface Dish{
     name: string,
     chinese_name: string,
@@ -22,6 +82,6 @@ export interface Dish{
     available_spicy_level : Spicy[],
     religion_restriction : Religion[],
     Side_dish? : string[],
-    flavor? : string[],
+    flavor? : Flavor[],
     extra? : string,
 }

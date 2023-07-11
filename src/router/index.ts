@@ -19,14 +19,28 @@ const routes = [
         name: 'Canteen',
         component: () => import('@/views/CanteenView.vue'),
       },
-
       {
         path: '/canteen/:canteen_path/:window_path',
         name: 'Window',
         component: () => import('@/views/WindowView.vue'),
+      },
+      {
+        path: '/issues',
+        name: 'Issues',
+        component: () => import('@/views/IssueView.vue'),
+      },
+      {
+        path: '/ref',
+        name: 'Reference',
+        component: () => import('@/views/ReferenceView.vue'),
       }
     ],
   },
+  {
+    path: '/order/:order_text',
+    name: 'Order',
+    component: () => import('@/views/OrderDisp.vue'),
+  }
 ]
 
 const router = createRouter({

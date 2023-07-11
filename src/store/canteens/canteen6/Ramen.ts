@@ -6,7 +6,6 @@ import { Dish, Religion, Spicy } from "@/types/Dish";
       chinese_name: "西红柿鸡蛋拉面",
       path: 'dish1',
       cover_picture:'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-12.jpg',
-      flavor: ["Sweet"],
       available_spicy_level: [Spicy.Not_Spicy],
       religion_restriction: [Religion.Not_Vegetarian],
     },
@@ -17,6 +16,5 @@ import { Dish, Religion, Spicy } from "@/types/Dish";
       available_spicy_level: [Spicy.Not_Spicy],
       religion_restriction: [Religion.Contains_Pork, Religion.Not_Vegetarian],
       cover_picture: 'https://statics.sjtucanteen.com/windows/photo_2023-06-24_21-23-12.jpg',
-      flavor: ["a little bit Spicy"],
     },
 };

@@ -22,6 +22,15 @@ export class Flavor {
   }
 }
 
+export class Side_Dish {
+  chinese_name: string = "";
+  english_name: string = "";
+  constructor(_chinese_name: string, _english_name: string) {
+    this.chinese_name = _chinese_name
+    this.english_name = _english_name
+  }
+}
+
 export const spicy_eng = ( spicy: Spicy): string => {
   switch (spicy) {
     case Spicy.Not_Spicy:
@@ -77,11 +86,12 @@ export interface Dish{
     name: string,
     chinese_name: string,
     path: string,
+    introduction?: string,
     cover_picture?: string | undefined,
     picture_title?: string | undefined,
     available_spicy_level : Spicy[],
     religion_restriction : Religion[],
-    Side_dish? : string[],
+    Side_dish? : Side_Dish[],
     flavor? : Flavor[],
     extra? : string,
 }

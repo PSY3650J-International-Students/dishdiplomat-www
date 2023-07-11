@@ -4,6 +4,9 @@
       <h1>{{ props.dish.name }}</h1>
       <h2>{{ props.dish.chinese_name }}</h2>
     <v-divider />
+    <p v-if="props.dish.introduction !== undefined">
+      <b> Introduction: </b>{{ props.dish.introduction }}
+    </p>
       <p v-if="props.dish.available_spicy_level.length !== 0">
         <b>Available Spicy Levels: </b> {{ get_spicy_level_descriptions(props.dish) }}
       </p>
@@ -18,9 +21,11 @@
               />
     <template v-if="props.dish.Side_dish !== undefined">
       <b>Available dishes: </b>
-      <v-list>
-        <v-list-item v-for="dishes in props.dish.Side_dish">{{ dishes }}</v-list-item>
-      </v-list>
+      <v-select
+              v-model="selectedDish"
+              :items="dishList"
+              :disabled="!dish_exists(props.dish)"
+              />
     </template>
     <v-divider />
     <b>Available Spicy Levels: </b>
@@ -34,13 +39,13 @@
 </template>
 
 <script lang="ts" setup>
-import { dishes_ChuanXiang } from '@/store/canteens/canteen4/ChuanXiang_poach';
-import { Dish, Flavor, spicy_eng, eng_spicy, spicy_chn } from '@/types/Dish';
+import { Dish, Flavor, Side_Dish, eng_spicy, spicy_chn, spicy_eng } from '@/types/Dish';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 // Define the selected values for flavor and spicy level
 const selectedFlavor = ref<string>('');
+const selectedDish = ref<string>('');
 
 const selectedSpicyLevel = ref<string>('');
 
@@ -66,12 +71,26 @@ if (props.dish.available_spicy_level !== undefined) {
   }
 }
 
+const dishList = ref<string[]>([]);
+  if (props.dish.Side_dish !== undefined) {
+  for (var dish of props.dish.Side_dish) {
+    dishList.value.push(dish.english_name);
+  }
+}
+
 
 const flavor_exists = (dish: Dish) => {
   if (dish.flavor === undefined) {
     return false;
   }
   return dish.flavor.length > 0;
+};
+
+const dish_exists = (dish: Dish) => {
+  if (dish.Side_dish === undefined) {
+    return false;
+  }
+  return dish.Side_dish.length > 0;
 };
 
 const get_flavor_choices = (dish: Dish) => {
@@ -142,7 +161,9 @@ const orderDish = () => {
     ch_selected_spicy_level = ""
   }
   const selected_flavor = selectedFlavor.value
+  const selected_dish = selectedDish.value
   var ch_selected_flavor = ""
+  var ch_selected_dish = ""
 
   var flavor_list : Flavor[] = []
   if (props.dish.flavor !== undefined) {
@@ -155,7 +176,18 @@ const orderDish = () => {
     }
   }
 
-  const ch_str_list = [ "我想要", props.dish.chinese_name, ch_selected_flavor, ch_selected_spicy_level ]
+  var dish_list : Side_Dish[] = []
+  if (props.dish.Side_dish !== undefined) {
+    dish_list = props.dish.Side_dish
+  }
+
+  for (var dish of dish_list) {
+    if (dish.english_name === selected_dish) {
+      ch_selected_dish = dish.chinese_name
+    }
+  }
+
+  const ch_str_list = [ "我想要", props.dish.chinese_name, ch_selected_flavor,ch_selected_dish ,ch_selected_spicy_level ]
 
   const ch_str = ch_str_list.join(" ")
   router.push({ name: 'Order', params: { order_text: ch_str } })

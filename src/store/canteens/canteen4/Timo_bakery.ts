@@ -1,10 +1,19 @@
-import { Dish, Spicy, Religion, Flavor } from '@/types/Dish';
+import { Dish, Flavor, Religion, Spicy } from '@/types/Dish';
 
 
 const flavors_const: Flavor[] = [new Flavor("抹茶", "Matcha")]
 
 
 export const dishes_Timo: { [key: string]: Dish } = {
+    dish0:{
+      name: "Timo_bakery",
+      chinese_name: "甜魔烘焙",
+      introduction: `All the desserts are put in the cabinet with a label. You can see the price on it
+      just point at what you want, the stuff will take one to you. Following pages are some recommendation.`,
+      path: 'dish0',
+      religion_restriction: [Religion.No_taboo],
+      available_spicy_level: [Spicy.Not_Spicy]
+    },
     dish1: {
       name: "bread",
       chinese_name: "面包",

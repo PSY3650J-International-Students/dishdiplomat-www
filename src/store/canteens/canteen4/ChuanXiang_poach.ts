@@ -6,7 +6,7 @@ const dishs_const: Side_Dish[] = [new Side_Dish("鸡肉片","Chicken 13￥"),new
 export const dishes_ChuanXiang: { [key: string]: Dish } = {
     dish1: {
       name: "Boiled dishes",
-      chinese_name: "水煮",
+      chinese_name: "",
       path: 'dish1',
       introduction:'The vegetables in the boiled dish are Chinese cabbage and bean sprout',
       cover_picture:'canteens/canteen4/Tengjiao_chicken.jpeg',

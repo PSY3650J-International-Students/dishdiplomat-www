@@ -1,8 +1,14 @@
 import { Canteen } from '@/types/Canteen';
 import { CanteenWindow } from '@/types/CanteenWindow';
+import { dishes_Chinese_pastry } from './canteen4/Chinese_pastry';
 import { dishes_ChuanXiang } from './canteen4/ChuanXiang_poach';
+import { dishes_Fplus } from './canteen4/F+';
+import { dishes_Korean_fried_chicken } from './canteen4/Korean_fried_chicken';
+import { dishes_rice_set } from './canteen4/Rice_set';
 import { dishes_Spicy_pot } from './canteen4/Spicy_pot';
+import { dishes_Steam } from './canteen4/Steam_dish';
 import { dishes_Timo } from './canteen4/Timo_bakery';
+import { dishes_light_meal } from './canteen4/light_meal';
 
 
 
@@ -27,7 +33,7 @@ const Light_meal: CanteenWindow = {
   path: 'Light_meal',
   chinese_name: "轻食五谷拌饭",
   cover_picture: 'canteens/canteen4/light_meal.jpg',
-  dishes: [],
+  dishes: Object.values(dishes_light_meal),
 }
 
 const Korean_fried_chicken: CanteenWindow = {
@@ -35,7 +41,7 @@ const Korean_fried_chicken: CanteenWindow = {
   path: 'Korean_fried_chicken',
   chinese_name: "韩式鸟叔炸鸡",
   cover_picture: 'canteens/canteen4/fired_chicken.jpg',
-  dishes: [],
+  dishes: Object.values(dishes_Korean_fried_chicken),
 }
 
 const Braised_dishes: CanteenWindow = {
@@ -75,22 +81,14 @@ const Steamed_dishes: CanteenWindow = {
     path: 'Steamed_dishes',
     chinese_name: "蒸功夫",
     cover_picture: 'canteens/canteen4/steam.jpg',
-    dishes: [],
+    dishes: Object.values(dishes_Steam),
 }
 
-const Lanzhou_noodles: CanteenWindow = {
-    name: 'Lanzhou noodles',
-    path: 'Lanzhou_noodles',
-    chinese_name: "兰州拉面",
+const Noodles: CanteenWindow = {
+    name: 'Noodles',
+    path: 'Noodles',
+    chinese_name: "面",
     cover_picture: 'canteens/canteen4/Lazhou.jpg',
-    dishes: [],
-}
-
-const Sliced_noodles: CanteenWindow = {
-    name: 'Sliced noodles',
-    path: 'Sliced_noodles',
-    chinese_name: "河南烩面",
-    cover_picture: 'canteens/canteen4/Huimian.jpg',
     dishes: [],
 }
 
@@ -115,7 +113,7 @@ const Beef_rice: CanteenWindow = {
     path: 'Beef_rice',
     chinese_name: "F+牛肉饭",
     cover_picture: 'canteens/canteen4/F+.jpg',
-    dishes: [],
+    dishes: Object.values(dishes_Fplus),
 }
 
 const Chinese_pastry: CanteenWindow = {
@@ -123,7 +121,7 @@ const Chinese_pastry: CanteenWindow = {
     path: 'Chinese_pastry',
     chinese_name: "生煎苏式汤包",
     cover_picture: 'canteens/canteen4/shengjian.jpg',
-    dishes: [],
+    dishes: Object.values(dishes_Chinese_pastry),
 }
 
 const Rice_set: CanteenWindow = {
@@ -131,7 +129,7 @@ const Rice_set: CanteenWindow = {
     path: 'Rice_set',
     chinese_name: "脆皮鸡饭，土耳其烤肉饭",
     cover_picture: 'canteens/canteen4/Rice_set.jpg',
-    dishes: [],
+    dishes: Object.values(dishes_rice_set),
 }
 
 const Teppanyaki: CanteenWindow = {
@@ -202,7 +200,7 @@ export const Canteen4: Canteen = {
   path: 'canteen4',
   window_list: [Timo_Bakery, Spicy_Boiled_dishes, Light_meal, Korean_fried_chicken
     ,Braised_dishes,Bibimap_Grain_noodle,Omurice,Maocai_Spicy_pot,Steamed_dishes
-    ,Lanzhou_noodles,Sliced_noodles,Rice_noodles,Hot_and_Dry_noodles_dumplings
+    ,Noodles,Rice_noodles,Hot_and_Dry_noodles_dumplings
     ,Beef_rice,Chinese_pastry,Rice_set,Teppanyaki,Good_curry,Roast_meat,Superstar_hamburger
     ,GIMLID_pizza,Self_picking_dishes,Vermicelli_with_duck_blood_soup,Hotchpotch]
 }

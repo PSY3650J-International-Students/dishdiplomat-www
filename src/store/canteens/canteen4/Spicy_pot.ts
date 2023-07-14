@@ -9,8 +9,8 @@ export const dishes_Spicy_pot: { [key: string]: Dish } = {
       path: 'dish1',
       introduction:`Spicy pot is a dish, the ingredent you choose will be boiled and fired with 
       flavour. Please take a dish to put meat(including meatballs), and a basin for vegetable(including
-        mushroom, bean products, noodles and rice noodles). The price: Vegetable: 14.9￥/500g, Meat: 29.9￥/500g
-        You need to pay for rice.`,
+        mushroom, bean products, noodles and rice noodles). The price: Vegetable: 14.9￥/500g, Meat: 29.9￥/500g.
+        You need to pay for rice.(selected in "available dishes")`,
       cover_picture:'canteens/canteen4/Spicy_pot1.jpeg',
       picture_title:'Spicy pot',
       available_spicy_level: [Spicy.Not_Spicy,Spicy.Mild,Spicy.Medium,Spicy.Extra_Hot],

@@ -10,7 +10,7 @@ export const dishes_Timo: { [key: string]: Dish } = {
       name: "Timo_bakery",
       chinese_name: "甜魔烘焙",
       introduction: `All the desserts, including breads, cakes, hot dogs and cookies are put in the cabinet with a label. You can see the price on it
-      just point at what you want, the stuff will take one to you. Following pages are some recommendation.`,
+      just point at what you want, the stuff will take one to you. Following pages are some recommendations.`,
       path: 'dish0',
       religion_restriction: [],
       available_spicy_level: []

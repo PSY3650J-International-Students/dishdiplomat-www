@@ -13,12 +13,14 @@
       <p v-if="props.dish.religion_restriction.length !== 0">
         <b>Religion Restrictions: </b> {{ get_religion_descriptions(props.dish) }}
       </p>
+      <template v-if="props.dish.flavor !== undefined">
       <b>Available flavors: </b>
       <v-select
               v-model="selectedFlavor"
               :items="flavorList"
               :disabled="!flavor_exists(props.dish)"
               />
+       </template>
     <template v-if="props.dish.Side_dish !== undefined">
       <b>Available dishes: </b>
       <v-select
@@ -28,11 +30,13 @@
               />
     </template>
     <v-divider />
+    <template v-if="props.dish.available_spicy_level.length > 0">
     <b>Available Spicy Levels: </b>
     <v-select
                      v-model="selectedSpicyLevel"
                      :items="spicyLevelList"
                      />
+    </template>
     <!-- <v-btn @click="addToOrderedDish">Add to Order</v-btn> -->
     <v-btn @click="orderDish">Order</v-btn>
   </v-container>

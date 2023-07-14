@@ -1,15 +1,19 @@
 import { Canteen } from '@/types/Canteen';
 import { CanteenWindow } from '@/types/CanteenWindow';
+import { dishes_BiBimap } from './canteen4/BiBimap';
 import { dishes_Chinese_pastry } from './canteen4/Chinese_pastry';
 import { dishes_ChuanXiang } from './canteen4/ChuanXiang_poach';
 import { dishes_Fplus } from './canteen4/F+';
+import { dishes_GIMLID_pizza } from './canteen4/GIMLID_pizza';
+import { dishes_hotch_potch } from './canteen4/Hotchpotch';
 import { dishes_Korean_fried_chicken } from './canteen4/Korean_fried_chicken';
+import { dishes_Omurice } from './canteen4/Omurice';
 import { dishes_rice_set } from './canteen4/Rice_set';
+import { dishes_Self_picking } from './canteen4/Self_picking_dish';
 import { dishes_Spicy_pot } from './canteen4/Spicy_pot';
 import { dishes_Steam } from './canteen4/Steam_dish';
 import { dishes_Timo } from './canteen4/Timo_bakery';
 import { dishes_light_meal } from './canteen4/light_meal';
-
 
 
 const Timo_Bakery: CanteenWindow = {
@@ -57,15 +61,15 @@ const Bibimap_Grain_noodle: CanteenWindow = {
     path: 'Bibimap_Grain_noodle',
     chinese_name: "石锅拌饭·杂粮粉",
     cover_picture: 'canteens/canteen4/Shiguo.jpg',
-    dishes: [],
+    dishes: Object.values(dishes_BiBimap),
 }
 
 const Omurice: CanteenWindow = {
-    name: 'Omurice & Earth pork chicken & Grilled fish',
+    name: 'Omurice & Pot chicken & Grilled fish',
     path: 'Omurice',
     chinese_name: "港式滑蛋饭",
     cover_picture: 'canteens/canteen4/Egg_rice.jpg',
-    dishes: [],
+    dishes: Object.values(dishes_Omurice),
 }
 
 const Maocai_Spicy_pot: CanteenWindow = {
@@ -168,7 +172,7 @@ const GIMLID_pizza: CanteenWindow = {
     path: 'GIMLID_pizza',
     chinese_name: "吉姆利德（四餐）",
     cover_picture: 'canteens/canteen4/GMLD.jpg',
-    dishes: [],
+    dishes: Object.values(dishes_GIMLID_pizza),
 }
 
 const Self_picking_dishes: CanteenWindow = {
@@ -176,7 +180,7 @@ const Self_picking_dishes: CanteenWindow = {
     path: 'Self_picking_dishes',
     chinese_name: "农家菜（四餐）",
     cover_picture: 'canteens/canteen4/zixuan.jpg',
-    dishes: [],
+    dishes:Object.values(dishes_Self_picking),
 }
 
 const Vermicelli_with_duck_blood_soup: CanteenWindow = {
@@ -192,7 +196,7 @@ const Hotchpotch: CanteenWindow = {
     path: 'Hotchpotch',
     chinese_name: "鑫龙福麻辣烫",
     cover_picture: 'canteens/canteen4/hot_potch.jpg',
-    dishes: [],
+    dishes: Object.values(dishes_hotch_potch),
 }
 
 export const Canteen4: Canteen = {

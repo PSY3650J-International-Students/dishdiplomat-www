@@ -26,6 +26,12 @@
         </ul>
       </v-list-item>
       <v-list-item>
+        <span>The pictures of dishes are cited from the following websites:</span>
+        <ul>
+          <li><a href="https://shuiyuan.sjtu.edu.cn/t/topic/152861">Shuiyuan forum</a></li>
+        </ul>
+      </v-list-item>
+      <v-list-item>
         <span><b>More importantly</b></span>
         <div class="slogan">This website is made with ❤️.</div>
       </v-list-item>

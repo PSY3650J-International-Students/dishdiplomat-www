@@ -11,7 +11,7 @@ export const dishes_light_meal: { [key: string]: Dish } = {
     dish0:{
       name: "Buck wheat noodle",
       chinese_name: "荞麦面",
-      introduction: `The noodles includs green bean, corn, vegatable, carrot, broccoli, black fungus, and the meat you choose (In available dish column).`,
+      introduction: `The noodles includs green beans, corn, vegatable, carrot, broccoli, black fungus, and the meat you choose (In available dish column).`,
       path: 'dish0',
       cover_picture:'canteens/canteen4/QiaomaiNoodle.jpg',
       religion_restriction: [],

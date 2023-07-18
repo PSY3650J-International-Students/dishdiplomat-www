@@ -25,7 +25,7 @@ export const dishes_Spicy_pot: { [key: string]: Dish } = {
        Please take a dish to put meat(including meatballs), and a basin for vegetable(including
         mushroom, bean products, noodles and rice noodles). The price: Vegetable: 14.9￥/500g, Meat: 29.9￥/500g
         The rice is free.`,
-      cover_picture:'canteens/canteen4/Spicy_pot1.jpeg',
+      cover_picture:'canteens/canteen4/maocai.jpg',
       picture_title:'Spicy pot',
       available_spicy_level: [Spicy.Not_Spicy,Spicy.Mild,Spicy.Medium,Spicy.Extra_Hot],
       religion_restriction: []

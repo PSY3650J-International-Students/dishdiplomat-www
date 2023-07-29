@@ -32,6 +32,19 @@
         </ul>
       </v-list-item>
       <v-list-item>
+        <h1>Contributors</h1>
+      </v-list-item>
+      <v-list-item>
+        <span>This website cannot be made without the help of the following people:</span>
+        <ul>
+          <li><a href="https://github.com/Gorgeous-Patrick">Baichuan Li</a></li>
+          <li><a href="https://github.com/FS-LLY">Leyao Li</a></li>
+          <li><a href="https://github.com/mi220314">Zhuomin Zhou</a></li>
+          <li><a href="https://github.com/Liu-Jingzhe">Jingzhe Liu</a></li>
+          <li><a href="https://github.com/Amity-Blight">Keyi Tang</a></li>
+        </ul>
+      </v-list-item>
+      <v-list-item>
         <span><b>More importantly</b></span>
         <div class="slogan">This website is made with ❤️.</div>
       </v-list-item>

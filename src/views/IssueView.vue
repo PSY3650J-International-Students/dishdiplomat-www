@@ -10,7 +10,7 @@
       <v-list-item>
       <span>There are a few ways to report issues to us:</span>
       <ul>
-        <li>Send us an email at <a href="mailto:public@patrickli.one">public@patrickli.one</a></li>
+        <li>Send us an email at <a href="mailto:issues@sjtucanteen.com">issues@sjtucanteen.com</a></li>
         <li>Send us a GitHub issues at <a href="https://github.com/PSY3650J-International-Students/dishdiplomat-www/issues/new">PSY3650J-International-Students/dishdiplomat-www</a></li>
       </ul>
       </v-list-item>
